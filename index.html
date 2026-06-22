@@ -1,0 +1,152 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .page { max-width: 680px; margin: 0 auto; padding: 0 0 4rem; font-family: var(--font-sans); }
+
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0 2rem; border-bottom: 0.5px solid #9FE1CB; margin-bottom: 3rem; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-mark { width: 30px; height: 30px; border-radius: 7px; background: #085041; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: #9FE1CB; }
+  .logo-text { font-size: 18px; font-weight: 500; color: #085041; letter-spacing: -0.3px; }
+  .nav-badge { font-size: 12px; color: #04342C; background: #9FE1CB; padding: 4px 12px; border-radius: 20px; font-weight: 500; }
+
+  .hero { text-align: center; margin-bottom: 3rem; }
+  .eyebrow { font-size: 13px; color: #0F6E56; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 500; }
+  .hero h1 { font-size: 36px; font-weight: 500; color: #085041; line-height: 1.2; letter-spacing: -0.5px; margin-bottom: 1.25rem; }
+  .hero h1 em { font-style: normal; color: #0F6E56; }
+  .hero p { font-size: 17px; color: #0F6E56; line-height: 1.7; max-width: 520px; margin: 0 auto 2rem; }
+
+  .form-row { display: flex; gap: 8px; max-width: 440px; margin: 0 auto 1rem; }
+  .form-row input { flex: 1; padding: 10px 14px; font-size: 15px; border: 0.5px solid #9FE1CB; border-radius: var(--border-radius-md); background: var(--color-background-primary); color: var(--color-text-primary); outline: none; }
+  .form-row input::placeholder { color: #0F6E56; opacity: 0.6; }
+  .form-row input:focus { border-color: #085041; box-shadow: 0 0 0 3px #E1F5EE; }
+  .btn-primary { padding: 10px 20px; font-size: 15px; font-weight: 500; background: #085041; color: #E1F5EE; border: none; border-radius: var(--border-radius-md); cursor: pointer; white-space: nowrap; }
+  .btn-primary:hover { background: #04342C; }
+  .form-note { font-size: 12px; color: #0F6E56; text-align: center; opacity: 0.8; }
+
+  .divider { border: none; border-top: 0.5px solid #9FE1CB; margin: 3rem 0; }
+
+  .pain-label { font-size: 13px; color: #0F6E56; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem; font-weight: 500; }
+  .pain-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 3rem; }
+  .pain-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; background: #E1F5EE; border-radius: var(--border-radius-md); border: 0.5px solid #9FE1CB; }
+  .pain-icon { font-size: 18px; color: #534AB7; margin-top: 1px; flex-shrink: 0; }
+  .pain-text { font-size: 15px; color: #085041; line-height: 1.5; }
+
+  .features-label { font-size: 13px; color: #0F6E56; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem; font-weight: 500; }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 3rem; }
+  .feature-card { padding: 1.25rem; background: var(--color-background-primary); border: 0.5px solid #9FE1CB; border-radius: var(--border-radius-lg); }
+  .feature-icon { font-size: 20px; color: #085041; margin-bottom: 10px; }
+  .feature-title { font-size: 14px; font-weight: 500; color: #085041; margin-bottom: 4px; }
+  .feature-desc { font-size: 13px; color: #0F6E56; line-height: 1.5; }
+
+  .quote { padding: 1.5rem 1.75rem; background: #E1F5EE; border-radius: var(--border-radius-lg); border-left: 3px solid #085041; border-radius: 0; margin-bottom: 3rem; }
+  .quote-text { font-size: 15px; color: #085041; line-height: 1.7; margin-bottom: 10px; font-style: italic; font-family: var(--font-serif); }
+  .quote-attr { font-size: 13px; color: #0F6E56; font-weight: 500; }
+
+  .beta-box { background: #085041; border-radius: var(--border-radius-lg); padding: 2rem; text-align: center; }
+  .beta-box h2 { font-size: 20px; font-weight: 500; color: #E1F5EE; margin-bottom: 0.5rem; }
+  .beta-box p { font-size: 15px; color: #9FE1CB; margin-bottom: 1.5rem; line-height: 1.6; }
+  .spots { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #04342C; background: #9FE1CB; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.5rem; font-weight: 500; }
+  .beta-box .form-row input { border-color: #0F6E56; background: #04342C; color: #E1F5EE; }
+  .beta-box .form-row input::placeholder { color: #9FE1CB; opacity: 0.7; }
+  .beta-box .form-row input:focus { border-color: #9FE1CB; box-shadow: 0 0 0 3px #0F6E56; }
+  .btn-light { padding: 10px 20px; font-size: 15px; font-weight: 500; background: #9FE1CB; color: #04342C; border: none; border-radius: var(--border-radius-md); cursor: pointer; white-space: nowrap; }
+  .btn-light:hover { background: #E1F5EE; }
+  .beta-note { font-size: 12px; color: #9FE1CB; opacity: 0.8; }
+
+  .footer { text-align: center; font-size: 13px; color: #0F6E56; margin-top: 3rem; opacity: 0.7; }
+</style>
+
+<div class="page">
+  <h2 class="sr-only">Kalendar — Parish ministry scheduling built for Catholic parishes. Join the private beta.</h2>
+
+  <nav class="nav">
+    <div class="logo">
+      <div class="logo-mark">K</div>
+      <div class="logo-text">Kalendar</div>
+    </div>
+    <div class="nav-badge">Private beta</div>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Built for Catholic parishes</div>
+    <h1>Ministry scheduling<br>that <em>actually works</em></h1>
+    <p>Coordinating lectors, Eucharistic ministers, altar servers, and ushers across every Mass shouldn't take your whole week. Kalendar makes it take minutes.</p>
+    <div class="form-row">
+      <input type="email" placeholder="Your parish email" aria-label="Email address" />
+      <button class="btn-primary" onclick="handleJoin()">Join the beta</button>
+    </div>
+    <div class="form-note">No credit card. No commitment. Limited spots available.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section>
+    <div class="pain-label">Sound familiar?</div>
+    <div class="pain-list">
+      <div class="pain-item">
+        <i class="ti ti-message-dots pain-icon" aria-hidden="true"></i>
+        <div class="pain-text">Someone texts you Saturday night — they forgot they're scheduled for the 9am Mass tomorrow.</div>
+      </div>
+      <div class="pain-item">
+        <i class="ti ti-table pain-icon" aria-hidden="true"></i>
+        <div class="pain-text">You're managing three Masses, six ministries, and forty volunteers in a spreadsheet that only you understand.</div>
+      </div>
+      <div class="pain-item">
+        <i class="ti ti-user-off pain-icon" aria-hidden="true"></i>
+        <div class="pain-text">You show up Sunday and a slot is empty because no one confirmed — again.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section>
+    <div class="features-label">What Kalendar does</div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="ti ti-calendar-event feature-icon" aria-hidden="true"></i>
+        <div class="feature-title">Mass-aware scheduling</div>
+        <div class="feature-desc">Schedule by Mass time, not just by date. Every ministry, every weekend.</div>
+      </div>
+      <div class="feature-card">
+        <i class="ti ti-bell feature-icon" aria-hidden="true"></i>
+        <div class="feature-title">Automatic reminders</div>
+        <div class="feature-desc">Volunteers are notified before you have to chase them. Confirmations come back to you.</div>
+      </div>
+      <div class="feature-card">
+        <i class="ti ti-switch-2 feature-icon" aria-hidden="true"></i>
+        <div class="feature-title">Sub and swap</div>
+        <div class="feature-desc">Volunteers request subs directly. You approve. No more group texts.</div>
+      </div>
+      <div class="feature-card">
+        <i class="ti ti-users feature-icon" aria-hidden="true"></i>
+        <div class="feature-title">Ministry groups</div>
+        <div class="feature-desc">Lectors, servers, ushers, EMHCs — each ministry managed separately, one view for all.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote">
+    <div class="quote-text">"I was spending two hours every week on a spreadsheet. Now it takes twenty minutes and I actually have a backup list when someone cancels."</div>
+    <div class="quote-attr">Ministry coordinator, St. Joseph Parish</div>
+  </div>
+
+  <div class="beta-box">
+    <h2>Join the private beta</h2>
+    <p>We're onboarding a small group of parishes this summer to shape the product. If you were referred, you're already ahead of the list.</p>
+    <div class="spots"><i class="ti ti-circle-check" aria-hidden="true"></i> 12 spots remaining</div>
+    <div class="form-row" style="max-width: 380px; margin: 0 auto 0.75rem;">
+      <input type="email" placeholder="Your parish email" aria-label="Email address for beta signup" />
+      <button class="btn-light" onclick="handleJoin()">Request access</button>
+    </div>
+    <div class="beta-note">We'll reach out within 48 hours to get you set up.</div>
+  </div>
+
+  <div class="footer">theKalendar.com · Built for Catholic parishes</div>
+</div>
+
+<script>
+function handleJoin() {
+  sendPrompt("I'd like to join the Kalendar private beta — what happens next?");
+}
+</script>
